@@ -1,0 +1,3 @@
+pgdata/*
+logs/nginx/*
+logs/php.log/*

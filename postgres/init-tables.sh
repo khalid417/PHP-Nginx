@@ -15,7 +15,7 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ALTER TYPE "Cards"."CardType"
         OWNER TO postgres;
     CREATE TYPE "Cards"."Classification" AS ENUM
-        ('Item', 'Action', 'Song', 'Dreamborn', 'Floodborn', 'Storyborn', 'Hero', 'Villain', 'Ally', 'King', 'Queen', 'Prince', 'Princess', 'Inventor', 'Broom', 'Sorceror', 'Pirate', 'Captain', 'Dragon', 'Alien', 'Deity', 'Detective', 'Fairy', 'Musketeer', 'Tigger', 'Mentor');
+        ('Item', 'Action', 'Song', 'Dreamborn', 'Floodborn', 'Storyborn', 'Hero', 'Villain', 'Ally', 'King', 'Queen', 'Prince', 'Princess', 'Inventor', 'Broom', 'Sorcerer', 'Pirate', 'Captain', 'Dragon', 'Alien', 'Deity', 'Detective', 'Fairy', 'Musketeer', 'Tigger', 'Mentor');
     ALTER TYPE "Cards"."Classification"
         OWNER TO postgres;
     CREATE TYPE "Cards"."Ink" AS ENUM

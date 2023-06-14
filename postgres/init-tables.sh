@@ -50,6 +50,7 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
         "Lore" integer NOT NULL,
         "Shift" integer,
         "CardId" integer NOT NULL,
+        "Epithet" text COLLATE pg_catalog."default" NOT NULL,
         CONSTRAINT "CharacterData_CardId_fkey" FOREIGN KEY ("CardId")
             REFERENCES "Cards"."CardData" ("Id") MATCH SIMPLE
             ON UPDATE CASCADE

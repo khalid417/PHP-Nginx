@@ -74,5 +74,8 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/070', 'Tinker Bell', 3, true, '{ Dreamborn, Ally, Fairy }', 'Steel', 'Battle Plans: [{exert}] - Draw a card, then choose and discard a card.', 'Character'),
     ('Cards/071', 'Gantu', 8, true, '{ Storyborn, Alien, Captain }', 'Steel', 'Under Arrest: Characters with cost 2 or less can''t challenge your character.', 'Character'),
     ('Cards/072', 'Hades', 8, false, '{ Floodborn, Villain, King, Deity }', 'Amber', 'Sinister Plot: This character gets +1 {lore} for each other Villain character you have in play.', 'Character'),
-    ('Cards/073', 'Olaf', 1, true, '{ Storyborn, Ally }', 'Amethyst', '', 'Character');
+    ('Cards/073', 'Olaf', 1, true, '{ Storyborn, Ally }', 'Amethyst', '', 'Character'),
+    ('Cards/074', 'Genie', 6, false, '{ Storyborn, Ally }', 'Emerald', 'Evasive / Disappear: When you play this character, you may return chosen character to the player''s hand.', 'Character'),
+    ('Cards/075', 'Iago', 3, true, '{ Storyborn, Ally }', 'Emerald', 'You got a problem?: [{Exert}] - Chosen character gains Reckless during their next turn.', 'Character'),
+    ('Cards/076', 'Timon', 1, true, '{ Storyborn, Ally }', 'Amber', 'Tastes Lke Chicken: When you play this character, you may remove up to 1 damage from chosen character.', 'Character');
 EOSQL

@@ -77,5 +77,8 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/073', 'Olaf', 1, true, '{ Storyborn, Ally }', 'Amethyst', '', 'Character'),
     ('Cards/074', 'Genie', 6, false, '{ Storyborn, Ally }', 'Emerald', 'Evasive / Disappear: When you play this character, you may return chosen character to the player''s hand.', 'Character'),
     ('Cards/075', 'Iago', 3, true, '{ Storyborn, Ally }', 'Emerald', 'You got a problem?: [{Exert}] - Chosen character gains Reckless during their next turn.', 'Character'),
-    ('Cards/076', 'Timon', 1, true, '{ Storyborn, Ally }', 'Amber', 'Tastes Lke Chicken: When you play this character, you may remove up to 1 damage from chosen character.', 'Character');
+    ('Cards/076', 'Timon', 1, true, '{ Storyborn, Ally }', 'Amber', 'Tastes Lke Chicken: When you play this character, you may remove up to 1 damage from chosen character.', 'Character'),
+    ('Cards/077', 'Archimedes', 1, true, '{ Dreamborn, Ally }', 'Amethyst', '', 'Character'),
+    ('Cards/078', 'Rafiki', 3, false, '{ Dreamborn, Mentor, Sorcerer }', 'Amethyst', 'Rush', 'Character'),
+    ('Cards/079', 'Beast', 5, false, '{ Dreamborn, Hero, Prince }', 'Amethyst', 'Rush / Roar: When you play this character, exert all opposing damage characters.', 'Character');
 EOSQL

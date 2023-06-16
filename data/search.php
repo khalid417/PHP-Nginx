@@ -195,6 +195,16 @@ try {
             array_push($searchParams, $_GET['text']);
             $sql .= 'to_tsvector("Text") @@ to_tsquery(?)';     
         }
+        if (isset($_GET['epithet'])) {
+            if (count($searchParams) < 1) {
+                $sql .= ' where ';
+            }
+            else {
+                $sql .= ' and ';
+            }
+            array_push($searchParams, $_GET['epithet']);
+            $sql .= 'to_tsvector("Epithet") @@ to_tsquery(?)';     
+        }
         $sth = $pdo->prepare($sql);
         if($sth->execute($searchParams)) {
             print_r($sth->fetchAll());

@@ -25,7 +25,7 @@ try {
                     $sth = $pdo->prepare($sql2);
                     $sth->bindParam('setid', $setid);
                     if($sth->execute()) {
-                        print_r($sth->fetch());
+                        print_r(json_encode($sth->fetch(PDO::FETCH_OBJ)));
                     }
                 }
                 else {

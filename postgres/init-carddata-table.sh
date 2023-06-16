@@ -5,7 +5,7 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/001', 'Belle', 3, true, '{ Dreamborn, Hero, Princess, Inventor }', 'Sapphire', 'Tinker: Whenever this character quests, you pay 1 {ink} less for the next item you play this turn.', 'Character'),
     ('Cards/002', 'Captain Hook', 1, true, '{ Dreamborn, Villain, Pirate, Captain }', 'Steel', 'Challenger +2', 'Character'),
     ('Cards/003', 'Cruella De Vil', 2, true, '{ Storyborn, Villain }', 'Emerald', 'You''ll be sorry: When this character is challenged and banished, you may return chosen character to their player''s hand.', 'Character'),
-    ('Cards/004', 'Elsa', 3, true, '{ Dreamborn, Hero, Queen, Sorcerer }', 'Amethyst', 'Freeze: [{Exert}] - Exert chosen opposing character', 'Character'),
+    ('Cards/004', 'Elsa', 3, true, '{ Dreamborn, Hero, Queen, Sorcerer }', 'Amethyst', 'Freeze: [{Exert}] - Exert chosen opposing character.', 'Character'),
     ('Cards/005', 'Hercules', 3, true, '{ Dreamborn, Hero, Prince }', 'Steel', 'Bodyguard', 'Character'),
     ('Cards/006', 'Lefou', 2, true, '{ Storyborn, Ally }', 'Amber', 'Loyal: If you have a character named Gaston in play, you pay 1 {ink} less to play this character.', 'Character'),
     ('Cards/007', 'Maleficent', 9, true, '{ Storyborn, Villain, Dragon }', 'Ruby', 'Dragon Fire: When you play this character, you may banish chosen opposing character.', 'Character'),

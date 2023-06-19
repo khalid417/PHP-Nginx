@@ -109,8 +109,9 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     -- UserList
     CREATE TABLE IF NOT EXISTS "Users"."UserList"
     (
-        "Id" integer NOT NULL,
+        "Id" integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
         "DisplayName" text COLLATE pg_catalog."default",
+        "Hash" text COLLATE pg_catalog."default",
         CONSTRAINT "UserList_pkey" PRIMARY KEY ("Id")
     )
     TABLESPACE pg_default;
@@ -128,7 +129,7 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     CREATE TABLE IF NOT EXISTS "Decks"."DeckLists"
     (
         "Name" text COLLATE pg_catalog."default" NOT NULL,
-        "Id" integer NOT NULL,
+        "Id" integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
         "Creator" integer,
         CONSTRAINT "DeckLists_pkey" PRIMARY KEY ("Id"),
         CONSTRAINT "DeckLists_Creator_fkey" FOREIGN KEY ("Creator")
@@ -191,7 +192,7 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     -- GameList
     CREATE TABLE IF NOT EXISTS "Games"."GameList"
     (
-        "Id" integer NOT NULL,
+        "Id" integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
         "Deck1" integer,
         "Deck2" integer,
         "Player1" integer,
@@ -233,7 +234,7 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     -- GameStates
     CREATE TABLE IF NOT EXISTS "Games"."GameStates"
     (
-        "Id" integer NOT NULL,
+        "Id" integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
         "GameId" integer,
         "P1Hand" integer[],
         "P2Hand" integer[],
@@ -266,5 +267,24 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     CREATE INDEX IF NOT EXISTS "GameIndex"
         ON "Games"."GameStates" USING btree
         ("GameId" ASC NULLS LAST)
+        TABLESPACE pg_default;
+
+    -- Sessions
+    CREATE TABLE IF NOT EXISTS "Users"."Sessions"
+    (
+        "User" integer NOT NULL,
+        "SessionKey" text COLLATE pg_catalog."default" NOT NULL,
+        CONSTRAINT "Sessions_User_key" UNIQUE ("User"),
+        CONSTRAINT "Sessions_User_fkey" FOREIGN KEY ("User")
+            REFERENCES "Users"."UserList" ("Id") MATCH SIMPLE
+            ON UPDATE CASCADE
+            ON DELETE CASCADE
+    )
+    TABLESPACE pg_default;
+    ALTER TABLE IF EXISTS "Users"."Sessions"
+        OWNER to postgres;
+    CREATE INDEX IF NOT EXISTS "UserIndex"
+        ON "Users"."Sessions" USING btree
+        ("User" ASC NULLS LAST)
         TABLESPACE pg_default;
 EOSQL

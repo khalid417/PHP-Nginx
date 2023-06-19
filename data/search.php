@@ -205,10 +205,13 @@ try {
             array_push($searchParams, $_GET['epithet']);
             $sql .= 'to_tsvector("Epithet") @@ to_tsquery(?)';     
         }
-        $sth = $pdo->prepare($sql);
-        if($sth->execute($searchParams)) {
-            print_r($sth->fetchAll());
+        $cardQuery = $pdo->prepare($sql);
+		$jsonArray = json_decode("[]",true);
+        $cardQuery->execute($searchParams);
+		while($card = $cardQuery->fetch(PDO::FETCH_ASSOC)){
+            array_push($jsonArray,$card);
         }
+		print_r(json_encode($jsonArray));
     }
 } catch (PDOException $ex) {
     die($ex->getMessage());

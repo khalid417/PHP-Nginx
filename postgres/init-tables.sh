@@ -287,4 +287,30 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
         ON "Users"."Sessions" USING btree
         ("User" ASC NULLS LAST)
         TABLESPACE pg_default;
+
+    -- Instances
+    CREATE TYPE "Games"."InstanceState" AS ENUM
+        ('Full', 'Down', 'Empty', 'Half');
+    ALTER TYPE "Games"."TurnPlayer"
+        OWNER TO postgres;
+    CREATE TABLE IF NOT EXISTS "Games"."Instances"
+    (
+        "Id" integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+        "InstanceName" text COLLATE pg_catalog."default" NOT NULL,
+        "InstanceState" "Games"."InstanceState" NOT NULL,
+        "Player1" integer,
+        "Player2" integer,
+        CONSTRAINT "Instances_pkey" PRIMARY KEY ("Id"),
+        CONSTRAINT "Instances_Player1_fkey" FOREIGN KEY ("Player1")
+            REFERENCES "Users"."UserList" ("Id") MATCH SIMPLE
+            ON UPDATE NO ACTION
+            ON DELETE NO ACTION,
+        CONSTRAINT "Instances_Player2_fkey" FOREIGN KEY ("Player2")
+            REFERENCES "Users"."UserList" ("Id") MATCH SIMPLE
+            ON UPDATE NO ACTION
+            ON DELETE NO ACTION
+    )
+    TABLESPACE pg_default;
+    ALTER TABLE IF EXISTS "Games"."Instances"
+        OWNER to postgres;
 EOSQL

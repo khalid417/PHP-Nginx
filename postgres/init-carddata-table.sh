@@ -41,7 +41,7 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/037', 'Aladdin', 7, true, '{ Floodborn, Hero }', 'Ruby', 'Daring Exploit: During your turn, whenever this character banishes another character in a challenge, you gain 2 lore and each opponent loses 2 lore.', 'Character'),
     ('Cards/038', 'Mulan', 5, true, '{ Storyborn, Hero, Princess }', 'Ruby', 'Lead by Example: During your turn whenever this character banishes another characters in a challenge, your other characters get +1 {lore} this turn.', 'Character'),
     ('Cards/039', 'Mickey Mouse', 3, false, '{ Dreamborn, Hero, Detective }', 'Sapphire', 'Get a Clue: When you play this character, you may put the top card of your deck into your inkwell facedown and exerted.', 'Character'),
-    ('Cards/040', 'Mickey Mouse', 6, true, '{ Dreamborn, Hero, Musketeer }', 'Steel', 'Bodyguard / All for One: Your other musketeer characters get +1 {strength}.', 'Character'),
+    ('Cards/040', 'Mickey Mouse', 6, true, '{ Dreamborn, Hero, Musketeer }', 'Steel', 'Bodyguard / All for One: Your other Musketeer characters get +1 {strength}.', 'Character'),
     ('Cards/041', 'Smash', 3, true, '{ Action }', 'Steel', 'Deal 3 damage to the chosen character', 'Action'),
     ('Cards/042', 'Heihei', 1, true, '{ Storyborn, Ally }', 'Amber', 'Support', 'Character'),
     ('Cards/043', 'Beast''s Mirror', 2, true, '{ Item }', 'Steel', 'Show Me: [{Exert}, 3 {ink}] - If you have no cards in your hand, draw a card.', 'Item'),
@@ -84,5 +84,6 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/080', 'Aladdin', 2, true, '{ Storyborn, Hero, Prince }', 'Emerald', 'Ward', 'Character'),
     ('Cards/081', 'Goofy', 5, true, '{ Dreamborn, Hero }', 'Ruby', 'Evasive', 'Character'),
     ('Cards/082', 'Lady Tremaine', 6, false, '{ Dreamborn, Villain }', 'Emerald', 'Do it again!: When you play this character, you may return an action card from your discard to your hand.', 'Character'),
-    ('Cards/083', 'Tigger', 6, true, '{ Storyborn, Tigger }', 'Ruby', 'Evasive', 'Character');
+    ('Cards/083', 'Tigger', 6, true, '{ Storyborn, Tigger }', 'Ruby', 'Evasive', 'Character'),
+    ('Cards/084', 'Goofy', 5, true, '{ Dreamborn, Hero, Musketeer }', 'Amber', 'Bodyguard', 'Character');
 EOSQL

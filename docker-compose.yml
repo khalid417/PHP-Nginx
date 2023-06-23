@@ -24,6 +24,69 @@ services:
     volumes:
       - ./data/:/var/www/html/
       - ./logs/php.log:/var/log/fpm-php.www.log
+#      - /var/run/docker.sock:/var/run/docker.sock # linux host
+      - /usr/local/bin/docker:/usr/bin/docker # windows host
+  cron:
+    build: 
+      context: .
+      dockerfile: cron/Dockerfile
+    networks:
+      - internal
+    volumes:
+#      - /var/run/docker.sock:/var/run/docker.sock # linux host
+      - /usr/local/bin/docker:/usr/bin/docker # windows host
+  ## Server group ##
+  server1:
+    image: unity.server
+    build:
+      context: ../../Unity/Lorcana/Build/Linux
+      dockerfile: ../../../../Docker/PHP-Nginx/unity/Dockerfile
+    ports:
+      - "27777:7777"
+    networks:
+      - internal
+  server2:
+    image: unity.server
+    ports:
+      - "27778:7777"
+    networks:
+      - internal
+  server3:
+    image: unity.server
+    ports:
+      - "27779:7777"
+    networks:
+      - internal
+  server4:
+    image: unity.server
+    ports:
+      - "27780:7777"
+    networks:
+      - internal
+  server5:
+    image: unity.server
+    ports:
+      - "27781:7777"
+    networks:
+      - internal
+  server6:
+    image: unity.server
+    ports:
+      - "27782:7777"
+    networks:
+      - internal
+  server7:
+    image: unity.server
+    ports:
+      - "27783:7777"
+    networks:
+      - internal
+  server8:
+    image: unity.server
+    ports:
+      - "27784:7777"
+    networks:
+      - internal
   postgres:
     build:
       context: .

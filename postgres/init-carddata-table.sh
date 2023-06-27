@@ -55,7 +55,7 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/051', 'Jafar', 4, true, '{ Dreamborn, Villain, Sorcerer }', 'Amethyst', 'Challenger +3', 'Character'),
     ('Cards/052', 'Dr. Facilier', 2, true, '{ Storyborn, Villain, Sorcerer }', 'Amethyst', 'Challenger +2', 'Character'),
     ('Cards/053', 'Maximus', 3, true, '{ Dreamborn, Ally }', 'Amber', 'Horsekick: When you play this character, chosen character gets -2 {strength} this turn.', 'Character'),
-    ('Cards/054', 'Ariel', 4, true, '{ Storyborn, Hero, Princess }', 'Amber', 'Voiceless: This character can''t {exert} to sing songs.', 'Character'),
+    ('Cards/054', 'Ariel', 4, true, '{ Storyborn, Hero, Princess }', 'Amber', 'Voiceless: This character can''t {Exert} to sing songs.', 'Character'),
     ('Cards/055', 'The Wardrobe', 3, true, '{ Dreamborn, Ally }', 'Amethyst', '', 'Character'),
     ('Cards/056', 'Maleficent', 4, true, '{ Storyborn, Villain, Sorcerer }', 'Sapphire', '', 'Character'),
     ('Cards/057', 'Jumba Jookiba', 5, true, '{ Dreamborn, Alien, Inventor }', 'Emerald', '', 'Character'),
@@ -69,9 +69,9 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/065', 'Coconut Basket', 2, true, '{ Item }', 'Sapphire', 'Consider The Coconut: Whenever you play a character, you may remove up to 2 damage from chosen character.', 'Item'),
     ('Cards/066', 'Part Of Your World', 3, false, '{ Action, Song }', 'Amber', 'Return a character card from your discard to your hand.', 'Action'),
     ('Cards/067', 'Flounder', 1, true, '{ Storyborn, Ally }', 'Sapphire', '', 'Character'),
-    ('Cards/068', 'Dinglehopper', 1, true, '{ Item }', 'Amber', 'Straighten Hair: [{exert}] - Remove up to 1 damage from chosen character.', 'Item'),
+    ('Cards/068', 'Dinglehopper', 1, true, '{ Item }', 'Amber', 'Straighten Hair: [{Exert}] - Remove up to 1 damage from chosen character.', 'Item'),
     ('Cards/069', 'Healing Glow', 1, true, '{ Action }', 'Amber', 'Remove up to 2 damage from chosen character.', 'Action'),
-    ('Cards/070', 'Tinker Bell', 3, true, '{ Dreamborn, Ally, Fairy }', 'Steel', 'Battle Plans: [{exert}] - Draw a card, then choose and discard a card.', 'Character'),
+    ('Cards/070', 'Tinker Bell', 3, true, '{ Dreamborn, Ally, Fairy }', 'Steel', 'Battle Plans: [{Exert}] - Draw a card, then choose and discard a card.', 'Character'),
     ('Cards/071', 'Gantu', 8, true, '{ Storyborn, Alien, Captain }', 'Steel', 'Under Arrest: Characters with cost 2 or less can''t challenge your character.', 'Character'),
     ('Cards/072', 'Hades', 8, false, '{ Floodborn, Villain, King, Deity }', 'Amber', 'Sinister Plot: This character gets +1 {lore} for each other Villain character you have in play.', 'Character'),
     ('Cards/073', 'Olaf', 1, true, '{ Storyborn, Ally }', 'Amethyst', '', 'Character'),
@@ -85,5 +85,8 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/081', 'Goofy', 5, true, '{ Dreamborn, Hero }', 'Ruby', 'Evasive', 'Character'),
     ('Cards/082', 'Lady Tremaine', 6, false, '{ Dreamborn, Villain }', 'Emerald', 'Do it again!: When you play this character, you may return an action card from your discard to your hand.', 'Character'),
     ('Cards/083', 'Tigger', 6, true, '{ Storyborn, Tigger }', 'Ruby', 'Evasive', 'Character'),
-    ('Cards/084', 'Goofy', 5, true, '{ Dreamborn, Hero, Musketeer }', 'Amber', 'Bodyguard', 'Character');
+    ('Cards/084', 'Goofy', 5, true, '{ Dreamborn, Hero, Musketeer }', 'Amber', 'Bodyguard', 'Character'),
+    ('Cards/085', 'Rapunzel', 6, false, '{ Dreamborn, Hero, Princess }', 'Ruby', 'Tangle: When you play this character, each opponent loses 1 {lore}.', 'Character'),
+    ('Cards/084', 'Stitch', 7, true, '{ Dreamborn, Hero, Alien }', 'Amber', 'Ohana: When you play this character, if you have 2 or more other characters in play, you may draw 2 cards.', 'Character'),
+    ('Cards/084', 'Sven', 6, true, '{ Storyborn, Ally }', 'Amethyst', '', 'Character');
 EOSQL

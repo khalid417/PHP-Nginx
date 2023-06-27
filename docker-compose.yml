@@ -24,8 +24,7 @@ services:
     volumes:
       - ./data/:/var/www/html/
       - ./logs/php.log:/var/log/fpm-php.www.log
-#      - /var/run/docker.sock:/var/run/docker.sock # linux host
-      - /usr/local/bin/docker:/usr/bin/docker # windows host
+      - /var/run/docker.sock:/var/run/docker.sock
   cron:
     build: 
       context: .
@@ -33,8 +32,7 @@ services:
     networks:
       - internal
     volumes:
-#      - /var/run/docker.sock:/var/run/docker.sock # linux host
-      - /usr/local/bin/docker:/usr/bin/docker # windows host
+      - /var/run/docker.sock:/var/run/docker.sock
   ## Server group ##
   server1:
     image: unity.server

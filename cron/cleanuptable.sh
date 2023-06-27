@@ -1,11 +1,11 @@
 #!/bin/bash
-exitedServers=$(docker ps --format '{{.Names}}' --filter "ancestor=unity.server" --filter "status=exited")
+exitedServers=$(/usr/local/bin/docker ps --format '{{.Names}}' --filter "ancestor=unity.server" --filter "status=exited")
 for i in {1..8}
 do
     test=$(echo "$exitedServers" | grep "server$i")
-    if [ -z "$test" ]
+    if [ -n "${test}" ]
     then 
-        docker start $test
-        curl http://nginx:80/update?instance=$test
+        /usr/local/bin/docker start $test
+        curl http://nginx:80/update.php?instance=$test
     fi
 done

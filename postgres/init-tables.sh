@@ -301,6 +301,7 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
         "Player1" integer,
         "Player2" integer,
         CONSTRAINT "Instances_pkey" PRIMARY KEY ("Id"),
+        CONSTRAINT "Instance_InstanceName_key" UNIQUE ("InstanceName"),
         CONSTRAINT "Instances_Player1_fkey" FOREIGN KEY ("Player1")
             REFERENCES "Users"."UserList" ("Id") MATCH SIMPLE
             ON UPDATE NO ACTION

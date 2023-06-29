@@ -19,6 +19,10 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_DB: ${POSTGRES_DB}
+    depends_on:
+      - nginx
+      - cron
+      - postgres
     networks:
       - internal
     volumes:
@@ -36,51 +40,91 @@ services:
   ## Server group ##
   server1:
     image: unity.server
+    container_name: server1
+    hostname: server1
     build:
       context: ../../Unity/Lorcana/Build/Linux
       dockerfile: ../../../../Docker/PHP-Nginx/unity/Dockerfile
+    depends_on:
+      postgres:
+        condition: service_healthy
     ports:
       - "27777:7777"
     networks:
       - internal
   server2:
     image: unity.server
+    container_name: server2
+    hostname: server2
+    depends_on:
+      postgres:
+        condition: service_healthy
     ports:
       - "27778:7777"
     networks:
       - internal
   server3:
     image: unity.server
+    container_name: server3
+    hostname: server3
+    depends_on:
+      postgres:
+        condition: service_healthy
     ports:
       - "27779:7777"
     networks:
       - internal
   server4:
     image: unity.server
+    container_name: server4
+    hostname: server4
+    depends_on:
+      postgres:
+        condition: service_healthy
     ports:
       - "27780:7777"
     networks:
       - internal
   server5:
     image: unity.server
+    container_name: server5
+    hostname: server5
+    depends_on:
+      postgres:
+        condition: service_healthy
     ports:
       - "27781:7777"
     networks:
       - internal
   server6:
     image: unity.server
+    container_name: server6
+    hostname: server6
+    depends_on:
+      postgres:
+        condition: service_healthy
     ports:
       - "27782:7777"
     networks:
       - internal
   server7:
     image: unity.server
+    container_name: server7
+    hostname: server7
+    depends_on:
+      postgres:
+        condition: service_healthy
     ports:
       - "27783:7777"
     networks:
       - internal
   server8:
     image: unity.server
+    container_name: server8
+    hostname: server8
+    depends_on:
+      postgres:
+        condition: service_healthy
     ports:
       - "27784:7777"
     networks:
@@ -93,6 +137,13 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_DB: ${POSTGRES_DB}
+      PGUSER: ${POSTGRES_USER}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready", "-d", "Lorcana"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
     networks: #
       - internal #
     volumes:

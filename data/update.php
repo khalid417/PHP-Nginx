@@ -6,13 +6,15 @@ $password = getenv("POSTGRES_PASSWORD");
 try {
     $dsn = "pgsql:host=$host;port=5432;dbname=$db;";
     $pdo = new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-    if (isset($_GET['instance'])) {
+    if (isset($_GET['instance']) && isset($_GET['status'])) {
         if ($pdo) {
             $instance = $_GET['instance'];
-            $sql = 'INSERT INTO "Games"."Instances" ("InstanceName", "InstanceState") VALUES (:instance, \'Empty\')
+            $state = $_GET['status'];
+            $sql = 'INSERT INTO "Games"."Instances" ("InstanceName", "InstanceState") VALUES (:instance, :state)
                     ON CONFLICT ("InstanceName") DO UPDATE SET "InstanceState" = \'Empty\'';
             $sth = $pdo->prepare($sql);
             $sth->bindParam('instance', $instance);
+            $sth->bindParam('state', $state);
             $sth->execute();
         }
         else {

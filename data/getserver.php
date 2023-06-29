@@ -29,7 +29,7 @@ try {
                             else {
                                 shell_exec('docker start '.$result->InstanceName);
                                 $status = 1;
-                                $port = shell_exec('docker ps --format "{{.Names}}-{{.Ports}}" | grep -o "'.$result->InstanceName.'.*[[:digit:]]\{5\}->7777" | cut -d - -f 5 | cut -d : -f 2');
+                                $port = shell_exec('docker ps --format "{{.Names}}-{{.Ports}}" | grep -o "'.$result->InstanceName.'.*[[:digit:]]\{5\}->7777" | cut -d - -f 2 | cut -d : -f 2');
                                 print '{"status": '.$status.', "port":'.$port.'}';
                             }
                         }
@@ -41,7 +41,7 @@ try {
                     }
                     else {
                         $status = 1;
-                        $port = shell_exec('docker ps --format "{{.Names}}-{{.Ports}}" | grep -o "'.$result->InstanceName.'.*[[:digit:]]\{5\}->7777" | cut -d - -f 5 | cut -d : -f 2');
+                        $port = shell_exec('docker ps --format "{{.Names}}-{{.Ports}}" | grep -o "'.$result->InstanceName.'.*[[:digit:]]\{5\}->7777" | cut -d - -f 2 | cut -d : -f 2');
                         print '{"status": '.$status.', "port":'.$port.'}';
                     }
                 }
@@ -53,7 +53,7 @@ try {
             }
             else {
                 $status = 1;
-                $port = shell_exec('docker ps --format "{{.Names}}-{{.Ports}}" | grep -o "'.$result->InstanceName.'.*[[:digit:]]\{5\}->7777" | cut -d - -f 5 | cut -d : -f 2');
+                $port = shell_exec('docker ps --format "{{.Names}}-{{.Ports}}" | grep -o "'.$result->InstanceName.'.*[[:digit:]]\{5\}->7777" | cut -d - -f 2 | cut -d : -f 2');
                 print '{"status": '.$status.', "port":'.$port.'}';
             }
         }

@@ -87,6 +87,11 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/083', 'Tigger', 6, true, '{ Storyborn, Tigger }', 'Ruby', 'Evasive', 'Character'),
     ('Cards/084', 'Goofy', 5, true, '{ Dreamborn, Hero, Musketeer }', 'Amber', 'Bodyguard', 'Character'),
     ('Cards/085', 'Rapunzel', 6, false, '{ Dreamborn, Hero, Princess }', 'Ruby', 'Tangle: When you play this character, each opponent loses 1 {lore}.', 'Character'),
-    ('Cards/084', 'Stitch', 7, true, '{ Dreamborn, Hero, Alien }', 'Amber', 'Ohana: When you play this character, if you have 2 or more other characters in play, you may draw 2 cards.', 'Character'),
-    ('Cards/084', 'Sven', 6, true, '{ Storyborn, Ally }', 'Amethyst', '', 'Character');
+    ('Cards/086', 'Stitch', 7, true, '{ Dreamborn, Hero, Alien }', 'Amber', 'Ohana: When you play this character, if you have 2 or more other characters in play, you may draw 2 cards.', 'Character'),
+    ('Cards/087', 'Sven', 6, true, '{ Storyborn, Ally }', 'Amethyst', '', 'Character'),
+    ('Cards/088', 'Maui', 8, true, '{ Storyborn, Hero, Deity }', 'Steel', '', 'Character'),
+    ('Cards/089', 'Peter Pan', 3, true, '{ Dreamborn, Hero }', 'Emerald', 'Evasive', 'Character'),
+    ('Cards/090', 'Ariel', 4, false, '{ Storyborn, Hero, Princess }', 'Sapphire', 'Look at this stuff: Whenever you play an item, you may ready this character.', 'Character'),
+    ('Cards/091', 'Zeus', 4, false, '{ Storyborn, Deity }', 'Amethyst', 'Rush / Challenger +4', 'Character'),
+    ('Cards/092', 'Simba', 1, true, '{ Storyborn, Hero, Prince }', 'Steel', 'Guess what?: When you play this character, you may draw a card, then choose and discard a card.', 'Character');
 EOSQL

@@ -11,7 +11,7 @@ try {
             $instance = $_GET['instance'];
             $state = $_GET['status'];
             $sql = 'INSERT INTO "Games"."Instances" ("InstanceName", "InstanceState") VALUES (:instance, :state)
-                    ON CONFLICT ("InstanceName") DO UPDATE SET "InstanceState" = \'Empty\'';
+                    ON CONFLICT ("InstanceName") DO UPDATE SET "InstanceState" = \'Empty\', "Player1" = NULL, "Player2" = NULL';
             $sth = $pdo->prepare($sql);
             $sth->bindParam('instance', $instance);
             $sth->bindParam('state', $state);

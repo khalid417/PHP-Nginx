@@ -80,7 +80,7 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/076', 'Timon', 1, true, '{ Storyborn, Ally }', 'Amber', 'Tastes Lke Chicken: When you play this character, you may remove up to 1 damage from chosen character.', 'Character'),
     ('Cards/077', 'Archimedes', 1, true, '{ Dreamborn, Ally }', 'Amethyst', '', 'Character'),
     ('Cards/078', 'Rafiki', 3, false, '{ Dreamborn, Mentor, Sorcerer }', 'Amethyst', 'Rush', 'Character'),
-    ('Cards/079', 'Beast', 5, false, '{ Dreamborn, Hero, Prince }', 'Amethyst', 'Rush / Roar: When you play this character, exert all opposing damage characters.', 'Character'),
+    ('Cards/079', 'Beast', 5, false, '{ Dreamborn, Hero, Prince }', 'Emerald', 'Rush / Roar: When you play this character, exert all opposing damage characters.', 'Character'),
     ('Cards/080', 'Aladdin', 2, true, '{ Storyborn, Hero, Prince }', 'Emerald', 'Ward', 'Character'),
     ('Cards/081', 'Goofy', 5, true, '{ Dreamborn, Hero }', 'Ruby', 'Evasive', 'Character'),
     ('Cards/082', 'Lady Tremaine', 6, false, '{ Dreamborn, Villain }', 'Emerald', 'Do it again!: When you play this character, you may return an action card from your discard to your hand.', 'Character'),
@@ -94,5 +94,6 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/090', 'Ariel', 4, false, '{ Storyborn, Hero, Princess }', 'Sapphire', 'Look at this stuff: Whenever you play an item, you may ready this character.', 'Character'),
     ('Cards/091', 'Zeus', 4, false, '{ Storyborn, Deity }', 'Amethyst', 'Rush / Challenger +4', 'Character'),
     ('Cards/092', 'Simba', 1, true, '{ Storyborn, Hero, Prince }', 'Steel', 'Guess what?: When you play this character, you may draw a card, then choose and discard a card.', 'Character'),
-    ('Cards/093', 'Donald Duck', 5, true, '{ Dreamborn, Hero, Inventor }', 'Sapphire', 'Ward', 'Character');
+    ('Cards/093', 'Donald Duck', 5, true, '{ Dreamborn, Hero, Inventor }', 'Sapphire', 'Ward', 'Character'),
+    ('Cards/094', 'Kristoff', 3, true, '{ Storyborn, Ally }', 'Steel', '', 'Character');
 EOSQL

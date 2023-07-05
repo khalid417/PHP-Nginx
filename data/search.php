@@ -206,12 +206,16 @@ try {
             $sql .= 'to_tsvector("Epithet") @@ to_tsquery(?)';     
         }
         $cardQuery = $pdo->prepare($sql);
-		$jsonArray = json_decode("[]",true);
+		$jsonArray = json_decode("[]", true);
         $cardQuery->execute($searchParams);
-		while($card = $cardQuery->fetch(PDO::FETCH_ASSOC)){
-            array_push($jsonArray,$card);
+		while ($card = $cardQuery->fetch(PDO::FETCH_OBJ)) {
+            $classifications = $card->Classifications;
+            $classifications = trim($classifications, "{}");
+            $classArray = explode(",", $classifications);
+            $card->Classifications = $classArray;
+            array_push($jsonArray, $card);
         }
-		print_r(json_encode($jsonArray));
+		print json_encode($jsonArray);
     }
 } catch (PDOException $ex) {
     die($ex->getMessage());

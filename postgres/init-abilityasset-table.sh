@@ -76,5 +76,8 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Handler091', 91),
     ('Handler092', 92),
     ('Handler093', 93),
-    ('Handler095', 95);
+    ('Handler095', 95),
+    ('Handler096', 96),
+    ('Handler097', 97),
+    ('Handler098', 98);
 EOSQL

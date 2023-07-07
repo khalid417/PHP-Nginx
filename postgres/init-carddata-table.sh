@@ -11,7 +11,7 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/007', 'Maleficent', 9, true, '{ Storyborn, Villain, Dragon }', 'Ruby', 'Dragon Fire: When you play this character, you may banish chosen opposing character.', 'Character'),
     ('Cards/008', 'Mickey Mouse', 8, true, '{ Dreamborn, Hero }', 'Ruby', 'Evasive', 'Character'),
     ('Cards/009', 'Robin Hood', 6, true, '{ Storyborn, Hero }', 'Sapphire', 'Feed the poor: When you play this character, if an opponent has more cards in their hand than you, draw a card. / Good shot: During your turn, this character has Evasive.', 'Character'),
-    ('Cards/010', 'Stitch', 6, true, '{ Floodborn, Hero, Alien }', 'Amber', 'Shift 4 / Adoring fans: Whenever you play a character with a cost of 2 or less, you may exert it to draw a card.', 'Character'),
+    ('Cards/010', 'Stitch', 6, true, '{ Floodborn, Hero, Alien }', 'Amber', ' Adoring fans: Whenever you play a character with a cost of 2 or less, you may exert it to draw a card.', 'Character'),
     ('Cards/011', 'Dragon Fire', 5, false, '{ Action }', 'Ruby', 'Banish chosen character', 'Action'),
     ('Cards/012', 'Fire The Cannons!', 1, false, '{ Action }', 'Steel', 'Deal 2 damage to chosen character', 'Action'),
     ('Cards/013', 'One Jump Ahead', 2, false, '{ Action, Song }', 'Sapphire', 'Put the top card of your deck into your ell facedown and exerted.', 'Action'),
@@ -96,5 +96,8 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/092', 'Simba', 1, true, '{ Storyborn, Hero, Prince }', 'Steel', 'Guess what?: When you play this character, you may draw a card, then choose and discard a card.', 'Character'),
     ('Cards/093', 'Donald Duck', 5, true, '{ Dreamborn, Hero, Inventor }', 'Sapphire', 'Ward', 'Character'),
     ('Cards/094', 'Kristoff', 3, true, '{ Storyborn, Ally }', 'Steel', '', 'Character'),
-    ('Cards/095', 'Merlin', 4, true, '{ Dreamborn, Mentor, Sorcerer }', 'Sapphire', 'Support', 'Character');
+    ('Cards/095', 'Merlin', 4, true, '{ Dreamborn, Mentor, Sorcerer }', 'Sapphire', 'Support', 'Character'),
+    ('Cards/096', 'Simba', 2, true, '{ Storyborn, Hero, Prince }', 'Amber', 'Bodyguard', 'Character'),
+    ('Cards/097', 'Tinker Bell', 6, true, '{ Floodborn, Ally, Fairy }', 'Steel', 'Rock the Boat: When you play this character, deal 1 damage to each opposing character. / Puny Pirate: During your turn, whenever this character banishes another character in a challenge, you may deal 2 damage to chosen opposing character.', 'Character'),
+    ('Cards/098', 'Befuddle', 1, true, '{ Action }', 'Amethyst', 'Return a character or item with cost 2 or less to their player''s hand.', 'Action');
 EOSQL

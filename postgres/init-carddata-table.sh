@@ -99,5 +99,7 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/095', 'Merlin', 4, true, '{ Dreamborn, Mentor, Sorcerer }', 'Sapphire', 'Support', 'Character'),
     ('Cards/096', 'Simba', 2, true, '{ Storyborn, Hero, Prince }', 'Amber', 'Bodyguard', 'Character'),
     ('Cards/097', 'Tinker Bell', 6, true, '{ Floodborn, Ally, Fairy }', 'Steel', 'Rock the Boat: When you play this character, deal 1 damage to each opposing character. / Puny Pirate: During your turn, whenever this character banishes another character in a challenge, you may deal 2 damage to chosen opposing character.', 'Character'),
-    ('Cards/098', 'Befuddle', 1, true, '{ Action }', 'Amethyst', 'Return a character or item with cost 2 or less to their player''s hand.', 'Action');
+    ('Cards/098', 'Befuddle', 1, true, '{ Action }', 'Amethyst', 'Return a character or item with cost 2 or less to their player''s hand.', 'Action'),
+    ('Cards/099', 'Kronk', 6, true, '{ Storyborn, Ally }', 'Steel', '', 'Character'),
+    ('Cards/100', 'Pongo', 4, true, '{ Storyborn, Hero }', 'Ruby', 'Evasive', 'Character');
 EOSQL

@@ -103,5 +103,7 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/099', 'Kronk', 6, true, '{ Storyborn, Ally }', 'Steel', '', 'Character'),
     ('Cards/100', 'Pongo', 4, true, '{ Storyborn, Hero }', 'Ruby', 'Evasive', 'Character'),
     ('Cards/101', 'Cerberus', 5, true, '{ Storyborn }', 'Steel', '', 'Character'),
-    ('Cards/102', 'Lilo', 1, false, '{ Storyborn, Hero }', 'Amber', '', 'Character');
+    ('Cards/102', 'Lilo', 1, false, '{ Storyborn, Hero }', 'Amber', '', 'Character'),
+    ('Cards/103', 'Flotsam', 5, false, '{ Storyborn, Ally }', 'Amethyst', 'Rush / Dexterous Lunge: Your characters named Jetsam gain Rush.', 'Character'),
+    ('Cards/104', 'Jetsam', 4, true, '{ Storyborn, Ally }', 'Amethyst', 'Evasive / Sinister Slither: Your characters named Flotsam gain Evasive.', 'Character');
 EOSQL

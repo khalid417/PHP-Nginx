@@ -151,8 +151,15 @@ try {
             else {
                 $sql .= ' and ';
             }
-            array_push($searchParams, $_GET['ink']);
-            $sql .= '"Ink" = ?';     
+            $inks = explode("&", $_GET['ink']);
+            $size = count($inks);
+            for ($i = 0; $i < $size; $i += 1) {
+                array_push($searchParams, $inks[$i]);
+                $sql .= '"Ink" = ?'; 
+                if ($i < $size - 1) {
+                    $sql .= ' OR ';
+                }
+            }       
         }
         if (isset($_GET['classification'])) {
             if (count($searchParams) < 1) {
@@ -174,17 +181,6 @@ try {
             array_push($searchParams, $_GET['song']);
             $sql .= '"Song" = ?';      
         }
-        if (isset($_GET['shift'])) {
-            if ($_GET['shift'] == 'true') {
-                if (count($searchParams) < 1) {
-                    $sql .= ' where ';
-                }
-                else {
-                    $sql .= ' and ';
-                }
-                $sql .= '"Shift" > 0'; 
-            }    
-        }
         if (isset($_GET['text'])) {
             if (count($searchParams) < 1) {
                 $sql .= ' where ';
@@ -204,6 +200,127 @@ try {
             }
             array_push($searchParams, $_GET['epithet']);
             $sql .= 'to_tsvector("Epithet") @@ to_tsquery(?)';     
+        }
+        $nonparams = count($searchParams) > 0;
+        if (isset($_GET['shift'])) {
+            if (!$nonparams) {
+                $sql .= ' where ';
+            }
+            else {
+                $sql .= ' and ';
+            }
+            $sql .= '"Shift" > 0';
+            $nonparams = true;
+        }
+        if (isset($_GET['bodyguard'])) {
+            if (!$nonparams) {
+                $sql .= ' where ';
+            }
+            else {
+                $sql .= ' and ';
+            }
+            $sql .= '"Text" like \'%{Bodyguard}%\'';
+            $nonparams = true;
+        }
+        if (isset($_GET['reckless'])) {
+            if (!$nonparams) {
+                $sql .= ' where ';
+            }
+            else {
+                $sql .= ' and ';
+            }
+            $sql .= '"Text" like \'%{Reckless}%\'';
+            $nonparams = true;
+        }
+        if (isset($_GET['evasive'])) {
+            if (!$nonparams) {
+                $sql .= ' where ';
+            }
+            else {
+                $sql .= ' and ';
+            }
+            $sql .= '"Text" like \'%{Evasive}%\'';
+            $nonparams = true;
+        }
+        if (isset($_GET['ward'])) {
+            if (!$nonparams) {
+                $sql .= ' where ';
+            }
+            else {
+                $sql .= ' and ';
+            }
+            $sql .= '"Text" like \'%{Ward}%\'';
+            $nonparams = true;
+        }
+        if (isset($_GET['challenger'])) {
+            if (!$nonparams) {
+                $sql .= ' where ';
+            }
+            else {
+                $sql .= ' and ';
+            }
+            $sql .= '"Text" like \'%{Challenger}%\'';
+            $nonparams = true;
+        }
+        if (isset($_GET['support'])) {
+            if (!$nonparams) {
+                $sql .= ' where ';
+            }
+            else {
+                $sql .= ' and ';
+            }
+            $sql .= '"Text" like \'%{Support}%\'';
+            $nonparams = true;
+        }
+        if (isset($_GET['rush'])) {
+            if (!$nonparams) {
+                $sql .= ' where ';
+            }
+            else {
+                $sql .= ' and ';
+            }
+            $sql .= '"Text" like \'%{Rush}%\'';
+            $nonparams = true;
+        }
+        if (isset($_GET['restsymbol'])) {
+            if (!$nonparams) {
+                $sql .= ' where ';
+            }
+            else {
+                $sql .= ' and ';
+            }
+            $sql .= '"Text" like \'%{Exert}%\'';
+            $nonparams = true;
+        }
+        if (isset($_GET['inksymbol'])) {
+            if (!$nonparams) {
+                $sql .= ' where ';
+            }
+            else {
+                $sql .= ' and ';
+            }
+            $sql .= '"Text" like \'%{ink}%\'';
+            $nonparams = true;
+        }
+        if (isset($_GET['loresymbol'])) {
+            if (!$nonparams) {
+                $sql .= ' where ';
+            }
+            else {
+                $sql .= ' and ';
+            }
+            $sql .= '"Text" like \'%{lore}%\'';
+            $nonparams = true;
+        }
+        if (isset($_GET['strengthsymbol'])) {
+            if (!$nonparams) {
+                $sql .= ' where ';
+            }
+            else {
+                $sql .= ' and ';
+            }
+            $sql .= '"Text" like \'%{strength}%\'';
+            $nonparams = true;
         }
         $cardQuery = $pdo->prepare($sql);
 		$jsonArray = json_decode("[]", true);

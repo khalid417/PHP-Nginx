@@ -15,5 +15,6 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     (false, 0, 64),
     (true, 3, 66),
     (false, 0, 69),
-    (false, 0, 98);
+    (false, 0, 98),
+    (true, 5, 106);
 EOSQL

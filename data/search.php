@@ -153,13 +153,15 @@ try {
             }
             $inks = explode("&", $_GET['ink']);
             $size = count($inks);
+            $sql .= '"Ink" in ('; 
             for ($i = 0; $i < $size; $i += 1) {
                 array_push($searchParams, $inks[$i]);
-                $sql .= '"Ink" = ?'; 
+                $sql .= '?'; 
                 if ($i < $size - 1) {
-                    $sql .= ' OR ';
+                    $sql .= ', ';
                 }
-            }       
+            }
+            $sql .= ")";     
         }
         if (isset($_GET['classification'])) {
             if (count($searchParams) < 1) {

@@ -107,5 +107,7 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/103', 'Flotsam', 5, false, '{ Storyborn, Ally }', 'Amethyst', '{Rush} / Dexterous Lunge: Your characters named Jetsam gain {Rush}.', 'Character'),
     ('Cards/104', 'Jetsam', 4, true, '{ Storyborn, Ally }', 'Amethyst', '{Evasive} / Sinister Slither: Your characters named Flotsam gain {Evasive}.', 'Character'),
     ('Cards/105', 'Triton', 7, true, '{ Storyborn, King }', 'Sapphire', '', 'Character'),
-    ('Cards/106', 'Grab Your Sword', 5, false, '{ Action, Song }', 'Steel', 'Deal 2 damage to each opposing character.', 'Action');
+    ('Cards/106', 'Grab Your Sword', 5, false, '{ Action, Song }', 'Steel', 'Deal 2 damage to each opposing character.', 'Action'),
+    ('Cards/107', 'Anna', 4, true, '{ Storyborn, Hero, Queen }', 'Amethyst', 'Loving Heart: When you play this this character, if you have a characater named Elsa in play, choose an opposing character. The chosen character doesn''t ready at the start of their next turn.', 'Character'),
+    ('Cards/108', 'Ariel', 3, true, '{ Storyborn, Hero, Princess }', 'Amber', '{Singer} 5 / Musical Debut: When you play this character, look at the top 4 cards of your deck. You may reveal a song card and put it into your hand. Put the rest on the bottom of your deck in any order.', 'Character');
 EOSQL

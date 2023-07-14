@@ -284,6 +284,16 @@ try {
             $sql .= '"Text" like \'%{Rush}%\'';
             $nonparams = true;
         }
+        if (isset($_GET['singer'])) {
+            if (!$nonparams) {
+                $sql .= ' where ';
+            }
+            else {
+                $sql .= ' and ';
+            }
+            $sql .= '"Text" like \'%{Singer}%\'';
+            $nonparams = true;
+        }
         if (isset($_GET['restsymbol'])) {
             if (!$nonparams) {
                 $sql .= ' where ';

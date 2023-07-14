@@ -85,5 +85,7 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     (1, 1, 2, 0, 102, 'Making a Wish'),
     (3, 4, 2, 0, 103, 'Ursula''s Spy'),
     (3, 3, 1, 0, 104, 'Ursula''s Spy'),
-    (5, 9, 2, 0, 105, 'The Sea King');
+    (5, 9, 2, 0, 105, 'The Sea King'),
+    (2, 4, 2, 0, 107, 'Heir to Arendelle'),
+    (2, 3, 1, 0, 108, 'Spectacular Singer');
 EOSQL

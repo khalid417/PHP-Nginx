@@ -109,5 +109,12 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/105', 'Triton', 7, true, '{ Storyborn, King }', 'Sapphire', '', 'Character'),
     ('Cards/106', 'Grab Your Sword', 5, false, '{ Action, Song }', 'Steel', 'Deal 2 damage to each opposing character.', 'Action'),
     ('Cards/107', 'Anna', 4, true, '{ Storyborn, Hero, Queen }', 'Amethyst', 'Loving Heart: When you play this this character, if you have a characater named Elsa in play, choose an opposing character. The chosen character doesn''t ready at the start of their next turn.', 'Character'),
-    ('Cards/108', 'Ariel', 3, true, '{ Storyborn, Hero, Princess }', 'Amber', '{Singer} 5 / Musical Debut: When you play this character, look at the top 4 cards of your deck. You may reveal a song card and put it into your hand. Put the rest on the bottom of your deck in any order.', 'Character');
+    ('Cards/108', 'Ariel', 3, true, '{ Storyborn, Hero, Princess }', 'Amber', '{Singer} 5 / Musical Debut: When you play this character, look at the top 4 cards of your deck. You may reveal a song card and put it into your hand. Put the rest on the bottom of your deck in any order.', 'Character'),
+    ('Cards/109', 'Sergeant Tibbs', 1, true, '{ Storyborn, Ally }', 'Ruby', '', 'Character'),
+    ('Cards/110', 'Gaston', 2, true, '{ Storyborn, Villain }', 'Ruby', '{Reckless}', 'Character'),
+    ('Cards/111', 'Sebastian', 2, true, '{ Storyborn, Ally }', 'Amber', '{Singer} 4', 'Character'),
+    ('Cards/112', 'Ursula''s Shell Necklace', 3, false, '{ Item }', 'Amber', 'Now, Sing!: Whenever you play a song, you may pay 1 {ink} to draw a card.', 'Character'),
+    ('Cards/113', 'Fan The Flames', 1, true, '{ Action }', 'Ruby', 'Ready chosen character. They can''t quest for the rest of this turn.', 'Action'),
+    ('Cards/114', 'If It''s Not Baroque', 3, false, '{ Action }', 'Sapphire', 'Return an item card from your discard to your hand.', 'Action'),
+    ('Cards/115', 'Break', 2, true, '{ Action }', 'Steel', 'Banish chosen item.', 'Action');
 EOSQL

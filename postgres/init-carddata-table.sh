@@ -113,8 +113,14 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/109', 'Sergeant Tibbs', 1, true, '{ Storyborn, Ally }', 'Ruby', '', 'Character'),
     ('Cards/110', 'Gaston', 2, true, '{ Storyborn, Villain }', 'Ruby', '{Reckless}', 'Character'),
     ('Cards/111', 'Sebastian', 2, true, '{ Storyborn, Ally }', 'Amber', '{Singer} 4', 'Character'),
-    ('Cards/112', 'Ursula''s Shell Necklace', 3, false, '{ Item }', 'Amber', 'Now, Sing!: Whenever you play a song, you may pay 1 {ink} to draw a card.', 'Character'),
+    ('Cards/112', 'Ursula''s Shell Necklace', 3, false, '{ Item }', 'Amber', 'Now, Sing!: Whenever you play a song, you may pay 1 {ink} to draw a card.', 'Item'),
     ('Cards/113', 'Fan The Flames', 1, true, '{ Action }', 'Ruby', 'Ready chosen character. They can''t quest for the rest of this turn.', 'Action'),
     ('Cards/114', 'If It''s Not Baroque', 3, false, '{ Action }', 'Sapphire', 'Return an item card from your discard to your hand.', 'Action'),
-    ('Cards/115', 'Break', 2, true, '{ Action }', 'Steel', 'Banish chosen item.', 'Action');
+    ('Cards/115', 'Break', 2, true, '{ Action }', 'Steel', 'Banish chosen item.', 'Action'),
+    ('Cards/116', 'Prince Phillip', 4, false, '{ Storyborn, Hero, Prince }', 'Amber', 'Heroism: When this character challenges and is banished, you may banish the challenged character.', 'Character'),
+    ('Cards/117', 'Aladdin', 3, true, '{ Storyborn, Hero }', 'Ruby', 'Improvise: When you play this character, each opponent loses 1 lore.', 'Character'),
+    ('Cards/118', 'Maleficent', 5, true, '{ Dreamborn, Villain, Sorcerer }', 'Sapphire', '', 'Character'),
+    ('Cards/119', 'Musketeer Tabard', 4, false, '{ Item }', 'Steel', 'All for one and one for all: Whenever one of your characters with {Bodyguard} is banished, you may draw a card.', 'Item'),
+    ('Cards/120', 'Duke of Weselton', 1, true, '{ Storyborn, Villain }', 'Emerald', '', 'Character'),
+    ('Cards/121', 'Minnie Mouse', 1, true, '{ Storyborn, Hero }', 'Ruby', '', 'Character');
 EOSQL

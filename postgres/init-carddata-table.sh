@@ -125,5 +125,6 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/121', 'Minnie Mouse', 1, true, '{ Storyborn, Hero }', 'Ruby', '', 'Character'),
     ('Cards/122', 'Scepter of Arendelle', 1, true, '{ Item }', 'Sapphire', 'Command: [{Exert}] - Chosen character gains {Support} this turn.', 'Item'),
     ('Cards/123', 'Hans', 4, true, '{ Storyborn, Villain, Prince }', 'Emerald', '', 'Character'),
-    ('Cards/124', 'Stampede', 1, false, '{ Action }', 'Emerald', 'Deal 2 damage to chosen damaged character.', 'Action');
+    ('Cards/124', 'Stampede', 1, false, '{ Action }', 'Emerald', 'Deal 2 damage to chosen damaged character.', 'Action'),
+    ('Cards/125', 'Marshmallow', 6, false, '{ Storyborn, Ally }', 'Amethyst', 'Durable: When this character is banished in a challenge, you may return this card to your hand.', 'Character');
 EOSQL

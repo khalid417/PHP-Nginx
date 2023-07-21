@@ -126,5 +126,15 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/122', 'Scepter of Arendelle', 1, true, '{ Item }', 'Sapphire', 'Command: [{Exert}] - Chosen character gains {Support} this turn.', 'Item'),
     ('Cards/123', 'Hans', 4, true, '{ Storyborn, Villain, Prince }', 'Emerald', '', 'Character'),
     ('Cards/124', 'Stampede', 1, false, '{ Action }', 'Emerald', 'Deal 2 damage to chosen damaged character.', 'Action'),
-    ('Cards/125', 'Marshmallow', 6, false, '{ Storyborn, Ally }', 'Amethyst', 'Durable: When this character is banished in a challenge, you may return this card to your hand.', 'Character');
+    ('Cards/125', 'Marshmallow', 6, false, '{ Storyborn, Ally }', 'Amethyst', 'Durable: When this character is banished in a challenge, you may return this card to your hand.', 'Character'),
+    ('Cards/126', 'Vicious Betrayal', 1, true, '{ Action }', 'Emerald', 'Chosen character gets +2 {strength} this turn. If a Villain character is chosen, they get +3 {strength} instead.', 'Action'),
+    ('Cards/127', 'Be Prepared', 7, false, '{ Action, Song }', 'Ruby', 'Banish all characters.', 'Action'),
+    ('Cards/128', 'A Whole New World', 5, false, '{ Action, Song }', 'Steel', 'Each player discards their hand and draws 7 cards.', 'Action'),
+    ('Cards/129', 'Mother Knows Best', 3, false, '{ Action, Song }', 'Emerald', 'Return chosen character to their player''s hand.', 'Action'),
+    ('Cards/130', 'Reflection', 1, true, '{ Action, Song }', 'Amethyst', 'Look at the top 3 cards of your deck. Put them back on the top of your deck in any order.', 'Action'),
+    ('Cards/131', 'Hakuna Matata', 4, true, '{ Action, Song }', 'Amber', 'Remove up to 3 damage from each of your characters.', 'Action'),
+    ('Cards/132', 'Mickey Mouse', 7, false, '{ Floodborn, Hero }', 'Emerald', 'Misdirection: Whenever you play an action, chosen opposing character can''t quest during their next turn.', 'Character'),
+    ('Cards/133', 'Do it Again', 3, false, '{ Action }', 'Emerald', 'Return an action card from your discard to your hand.', 'Action'),
+    ('Cards/134', 'Stolen Scimitar', 3, true, '{ Item }', 'Emerald', 'Slash: [{Exert}] - Chosen characters gets +1 {strength} this turn. If a character named Aladdin is chosen, he gets +2 {strength} instead.', 'Item'),
+    ('Cards/135', 'Hans', 4, true, '{ Storyborn, Villain, Prince }', 'Steel', 'Stage a Little Accident: Whenever this character quests, you may deal 1 damage to chosen character.', 'Character');
 EOSQL

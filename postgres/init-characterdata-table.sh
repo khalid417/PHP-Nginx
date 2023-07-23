@@ -99,5 +99,22 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     (3, 3, 3, 0, 123, 'Scheming Prince'),
     (5, 5, 1, 0, 125, 'Persistent Guardian'),
     (6, 5, 2, 5, 132, 'Artful Rogue'),
-    (3, 3, 2, 0, 135, 'Thirteenth in Line');
+    (3, 3, 2, 0, 135, 'Thirteenth in Line'),
+    (1, 5, 2, 0, 136, 'Gifted With Healing'),
+    (1, 2, 2, 0, 137, 'Charming Rogue'),
+    (4, 5, 1, 0, 138, 'Palace Horse'),
+    (2, 1, 1, 0, 139, 'Pulling the Strings'),
+    (4, 4, 1, 0, 140, 'Queen Regent'),
+    (2, 4, 3, 0, 141, 'Tempermental Emperor'),
+    (2, 3, 1, 0, 142, 'The Ever Impressive'),
+    (3, 2, 2, 0, 143, 'Mischievous Monkey'),
+    (6, 6, 1, 6, 144, 'Shameless Firebrand'),
+    (5, 5, 2, 0, 145, 'Alien Pirate'),
+    (2, 5, 1, 3, 146, 'Thinking a Happy Thought'),
+    (2, 4, 1, 0, 147, 'Common Crook'),
+    (4, 3, 1, 0, 148, 'No-Good Scoundrel'),
+    (4, 6, 3, 6, 149, 'Spirit of Winter'),
+    (3, 4, 1, 0, 150, 'Ice Surfer'),
+    (3, 3, 2, 0, 151, 'Peter Pan''s Ally'),
+    (0, 5, 2, 0, 152, 'Keeper of Secrets');
 EOSQL

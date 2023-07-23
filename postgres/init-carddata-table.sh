@@ -136,5 +136,22 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/132', 'Mickey Mouse', 7, false, '{ Floodborn, Hero }', 'Emerald', 'Misdirection: Whenever you play an action, chosen opposing character can''t quest during their next turn.', 'Character'),
     ('Cards/133', 'Do it Again', 3, false, '{ Action }', 'Emerald', 'Return an action card from your discard to your hand.', 'Action'),
     ('Cards/134', 'Stolen Scimitar', 3, true, '{ Item }', 'Emerald', 'Slash: [{Exert}] - Chosen characters gets +1 {strength} this turn. If a character named Aladdin is chosen, he gets +2 {strength} instead.', 'Item'),
-    ('Cards/135', 'Hans', 4, true, '{ Storyborn, Villain, Prince }', 'Steel', 'Stage a Little Accident: Whenever this character quests, you may deal 1 damage to chosen character.', 'Character');
+    ('Cards/135', 'Hans', 4, true, '{ Storyborn, Villain, Prince }', 'Steel', 'Stage a Little Accident: Whenever this character quests, you may deal 1 damage to chosen character.', 'Character'),
+    ('Cards/136', 'Rapunzel', 4, true, '{ Storyborn, Hero, Princess }', 'Amber', 'Gleam and Glow: When you play this character, remove up to 3 damage from one of your characters. Draw a card for each 1 damage removed this way.', 'Character'),
+    ('Cards/137', 'Flynn Rider', 2, true, '{ Storyborn, Hero, Prince }', 'Emerald', 'Here comes the Smolder: Whenever this character is challenged, the challenging player chooses and discards a card.', 'Character'),
+    ('Cards/138', 'Maximus', 5, true, '{ Storyborn, Ally }', 'Amber', '{Bodyguard} / {Support}', 'Character'),
+    ('Cards/139', 'Megara', 2, true, '{ Dreamborn, Ally }', 'Emerald', 'Wonder Boy: When you play this character, chosen character gets +2 {strength} this turn.', 'Character'),
+    ('Cards/140', 'Elsa', 4, true, '{ Storyborn, Hero, Queen, Sorcerer }', 'Amethyst', '', 'Character'),
+    ('Cards/141', 'Kuzco', 5, false, '{ Storyborn, King }', 'Emerald', '{Ward} / No Touchy!: When this character is challenged and banished, you may banish the challenging character.', 'Character'),
+    ('Cards/142', 'Geni', 2, true, '{ Dreamborn, Ally }', 'Emerald', '', 'Character'),
+    ('Cards/143', 'Abu', 3, true, '{ Storyborn, Ally }', 'Ruby', '', 'Character'),
+    ('Cards/144', 'Scar', 8, false, '{ Floodborn, Villain, King }', 'Ruby', 'Rousing Speech: When you play this character, ready your characters with cost 3 or less. They can''t quest for the rest of this turn.', 'Character'),
+    ('Cards/145', 'John Silver', 6, true, '{ Storyborn, Villain, Alien, Pirate, Captain }', 'Emerald', 'Pick your Fights: When you play this character and whenever he quests, chosen opposing character gains {Reckless} during their next turn.', 'Character'),
+    ('Cards/146', 'Captain Hook', 5, false, '{ Floodborn, Villain, Pirate, Captain }', 'Steel', '{Challenger} +3 / Stolen Dust: Characters with cost 3 or less can''t challenge this character.', 'Character'),
+    ('Cards/147', 'Jasper', 3, true, '{ Storyborn, Ally }', 'Emerald', 'Puppynapping: Whenever this character quests, chosen opposing character can''t quest during thier next turn.', 'Character'),
+    ('Cards/148', 'Horace', 4, true, '{ Storyborn, Ally }', 'Emerald', '', 'Character'),
+    ('Cards/149', 'Elsa', 8, false, '{ Floodborn, Hero, Queen, Sorcerer }', 'Amethyst', 'Deep Freeze: When you play this character, exert up to 2 chosen characters. They can''t ready at the start of their next turn.', 'Character'),
+    ('Cards/150', 'Elsa', 4, true, '{ Dreamborn, Hero, Queen, Sorcerer }', 'Ruby', 'That''s no  Blizzard: Whenever you play a character named Anna, ready this character. This character can''t quest for the rest of this turn.', 'Character'),
+    ('Cards/151', 'Tinker Bell', 5, false, '{ Storyborn, Ally, Fairy }', 'Amethyst', '{Evasive} / Loyal and Devoted: Your characters named Peter Pan gain {Challenger} +1.', 'Character'),
+    ('Cards/152', 'Jafar', 4, true, '{ Dreamborn, Villain, Sorcerer }', 'Amethyst', 'Hidden Wonders: This character gets +1 {strength} for each card in your hand.', 'Character');
 EOSQL

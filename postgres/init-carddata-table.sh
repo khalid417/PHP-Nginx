@@ -173,7 +173,7 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
     ('Cards/169', 'Steal From The Rich', 5, false, '{ Action }', 'Emerald', 'Whenever one of your characters quests this turn, each opponent loses 1 lore.', 'Character'),
     ('Cards/170', 'Captain', 5, true, '{ Storyborn, Ally, Captain }', 'Ruby', '', 'Character'),
     ('Cards/171', 'Stitch', 6, true, '{ Storyborn, Hero, Alien }', 'Ruby', '', 'Character'),
-    ('Cards/172', 'Shield Of Virtue', 1, true, '{ Item }', 'Ruby', 'Fireproof: [{Exert}, 3 {ink}] - Ready chosen character. They can''t quest for the rest of the turn.', 'Character'),
+    ('Cards/172', 'Shield Of Virtue', 1, true, '{ Item }', 'Ruby', 'Fireproof: [{Exert}, 3 {ink}] - Ready chosen character. They can''t quest for the rest of the turn.', 'Item'),
     ('Cards/173', 'Gramma Tala', 2, true, '{ Storyborn, Mentor }', 'Sapphire', 'I Will Be With You: When this character is banished, you may put this card into your inkwell facedown and exerted.', 'Character'),
     ('Cards/174', 'Mufasa', 6, true, '{ Storyborn, Mentor, King }', 'Sapphire', '', 'Character'),
     ('Cards/175', 'Magic Golden Flower', 1, true, '{ Item }', 'Sapphire', 'Healing Pollen: [Banish this item] - Remove up to 3 damage from a chosen character.', 'Character'),

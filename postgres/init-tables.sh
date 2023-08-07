@@ -37,7 +37,8 @@ psql -v ON_ERROR_STOP --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOS
         "SetId" text COLLATE pg_catalog."default",
         "Id" integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
         "Text" text COLLATE pg_catalog."default",
-        CONSTRAINT "CardData_pkey" PRIMARY KEY ("Id")
+        CONSTRAINT "CardData_pkey" PRIMARY KEY ("Id"),
+        CONSTRAINT "CardData_SetId_key" UNIQUE ("SetId")
     )
     TABLESPACE pg_default;
     ALTER TABLE IF EXISTS "Cards"."CardData"

@@ -4,4 +4,3 @@ COPY postgres/init-carddata-table.sh /docker-entrypoint-initdb.d/init2-tabledata
 COPY postgres/init-characterdata-table.sh /docker-entrypoint-initdb.d/init3-tabledata.sh
 COPY postgres/init-actiondata-table.sh /docker-entrypoint-initdb.d/init4-tabledata.sh
 COPY postgres/init-abilityasset-table.sh /docker-entrypoint-initdb.d/init5-tabledata.sh
-COPY postgres/update-setid.sh /docker-entrypoint-initdb.d/init6-setid-update.sh
